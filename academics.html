@@ -55,7 +55,7 @@
             flex-grow: 1;
         }
         .academic-category {
-            margin-top: 15px;
+            margin-top: 10px;
         }
         .academic-category h3 {
             font-size: 1.5rem;
@@ -64,7 +64,7 @@
             margin-top: 10px;
         }
         .academic-list li {
-            padding: 8px;
+            padding: 6px;
             font-size: 1.2rem;
             cursor: pointer;
             transition: color 0.3s;
@@ -73,7 +73,7 @@
             color: #D32F2F;
         }
         .chat-container {
-            width: 30%;
+            width: 40%;
             background: rgba(250, 250, 250, 0.9);
             padding: 20px;
             border-radius: 10px;
@@ -155,7 +155,7 @@
             document.getElementById('userInput').value = "";
             
             setTimeout(() => {
-                let response = "I'm here to assist you with academic queries!";
+                let response = getBotResponse(userInput);
                 chatBox.innerHTML += `<p><strong>Bot:</strong> ${response}</p>`;
                 chatBox.scrollTop = chatBox.scrollHeight;
             }, 1000);
@@ -166,6 +166,59 @@
                 sendMessage();
             }
         }
+
+        function getBotResponse(query) {
+            if (query.toLowerCase().includes("office hours")) {
+                return "The administration office is open from 9 AM to 5 PM, Monday to Friday.";
+            } else if (query.toLowerCase().includes("admission process")) {
+                return "You can apply online through our portal. For more details, visit the admission section on our website.";
+            } else if (query.toLowerCase().includes("admission") && query.toLowerCase().includes("apply")) {
+                return "To apply for admission, go to the Admissions page and fill out the online form.";
+            } else if (query.toLowerCase().includes("admission fees")) {
+                return "Admission fees vary by program. Please refer to the Admission section for course-wise fees.";
+            } else if (query.toLowerCase().includes("tagore")) {
+                return "Tagore Hostel: ₹1,20,000/year (4-Seater Non-AC).";
+            } else if (query.toLowerCase().includes("sukhna")) {
+                return "Sukhna Hostel: ₹1,20,000/year (4-Seater Non-AC).";
+            } else if (query.toLowerCase().includes("lc")) {
+                return "LC Hostel: ₹1,20,000/year (4-Seater Non-AC).";
+            } else if (query.toLowerCase().includes("shivalik")) {
+                return "Shivalik Hostel: ₹1,20,000/year (4-Seater Non-AC).";
+            } else if (query.toLowerCase().includes("gobind")) {
+                return "Gobind Hostel: ₹1,20,000/year (4-Seater Non-AC).";
+            } else if (query.toLowerCase().includes("nc")) {
+                return "NC Hostel: ₹1,20,000/year (4-Seater Non-AC).";
+            } else if (query.toLowerCase().includes("zakir")) {
+                return "Zakir Hostel: ₹1,38,000/year (5-Seater AC), ₹1,06,000/year (5-Seater Non-AC).";
+            } else if (query.toLowerCase().includes("gpa")) {
+                return "Go to the GPA Calculator page and enter your subject grades to calculate GPA.";
+            } else if (query.toLowerCase().includes("grading system")) {
+                return "The grading system uses GPA out of 10. Refer to the GPA Calculator section.";
+            } else if (query.toLowerCase().includes("exam schedule")) {
+                return "Exam schedules are listed in the Academics section under Examinations.";
+            } else if (query.toLowerCase().includes("library")) {
+                return "The Digital Library has PDFs and PPTs for all subjects.";
+            } else if (query.toLowerCase().includes("map")) {
+                return "You can view the campus on the embedded Google Map in the Campus section.";
+            } else if (query.toLowerCase().includes("placement")) {
+                return "Placement support is provided by the Career Development Cell.";
+            } else if (query.toLowerCase().includes("courses")) {
+                return "AiCademy offers B.Tech, BBA, MBA, M.Tech and more. See the Courses page.";
+            } else if (query.toLowerCase().includes("contact")) {
+                return "Email: admissions@cumail.in, Phone: 1800 257 1800. Office hours: Mon–Fri, 9 AM–5 PM.";
+            } else if (query.toLowerCase().includes("research")) {
+                return "Research labs are covered under Academics > Resources.";
+            } else if (query.toLowerCase().includes("counselling")) {
+                return "Counselling support is available in the Academics section.";
+            } else if (query.toLowerCase().includes("room types")) {
+                return "Hostels offer 3-seater , 4-seater and 5-seater.";
+            } else if (query.toLowerCase().includes("pay")) {
+                return "Fees can be paid online via the portal or offline at the admin office.";
+            } else {
+                return "I'm not sure about that. Please visit the administration office for more details.";
+            }
+        }
+
     </script>
 </body>
 </html>
